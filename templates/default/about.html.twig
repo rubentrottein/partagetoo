@@ -1,0 +1,64 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+    <section class="container min-vh-75">
+        <h2>A propos</h2>
+
+        <div class="card text-bg-dark w-25 mx-auto my-5">
+            <img src="https://picsum.photos/1980/1280" class="card-img" alt="Illustration aléatoire">
+            <div class="card-img-overlay blur text-center text-white-emphasis align-content-center" style="background:rgba(0,0,0,.4)">
+                <h5 class="card-title">Ruben Trottein</h5>
+                <p class="card-text">Formation m2i CDA (Concepteur Développeur d'Applications</p>
+                <p class="card-text"><small>Version 1.0 12/04/2024</small></p>
+            </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        A propos de ce site
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Liste d'annonces</strong> Cette petite application consiste a faire de A à Z un petit programme en Symfony qui permet de sortir une liste d'annonces.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Idées de fonctionnalités à développer
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ol>
+                            <li><strong>Ajouter des entités consistantes</strong> Champs de l'annonce : images, auteur, prix proposé</li>
+                            <li><strong>Ajouter des fonctionnalités basiques</strong> catégories , utilisateurs</li>
+                            <li><strong>Ajouter une authentification</strong></li>
+                            <li><strong>Ajouter un petit backOffice pour ajouter des annonces</strong></li>
+                            <li><strong>Ajouter la possibilité de répondre aux annonces</strong></li>
+                            <li><strong>Ajouter un système de favoris dans le back-office</strong></li>
+                            <li><strong>Ajouter un système d'envoi de mail entre utilisateurs pour négocier les prix etc.</strong></li>
+                            <li><strong>Ajouter un stripe sur le site</strong></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        En savoir +
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p class="lead"><a href="https://mistertea.fr/pro#portfolio">Jetez un oeil a mes autres projets</p>
+                        <p class="">Merci pour votre visite! 😊 </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

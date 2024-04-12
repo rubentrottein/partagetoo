@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
+{% endblock %}
+
+{% block body %}
+
+
+<!-- header-area -->
+{% include 'components/_header.html.twig' %}
+<!-- header-area-end -->
+
+
+<!-- main-area -->
+<main class="bg-dark-subtle py-3">
+    {% block content %}{% endblock %}
+</main>
+<!-- main-area-end -->
+
+<!-- footer-area -->
+{% include 'components/_footer.html.twig' %}
+<!-- footer-area-end -->
+
+{% endblock %}

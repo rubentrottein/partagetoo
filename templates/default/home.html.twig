@@ -1,0 +1,20 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+        <h2 class="text-secondary text-center">Liste des annonces</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4 container mx-auto my-5">
+            {% for key,offer in offers %}
+                <div class="col">
+                    <div class="card">
+                        <img src="https://picsum.photos/id/36{{ key }}/1980/1280" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ offer.title }}</h5>
+                            <i>{{ offer.updatedAt | date("d/m/Y h:m:s:ms") }}</i>
+                            <p class="card-text">{{ offer.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+{% endblock %}
