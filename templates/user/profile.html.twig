@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<style>
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="mx-auto my-5 w-75 bg-dark-subtle p-5 rounded text-black">
+    {% if app.user %}
+    <div class="mb-3">
+        <p class="col-3 h4 text-primary">Bienvenue, {{ app.user.username }}</p>
+    </div>
+    {% else %}
+        <h1>Connectez vous pour voir votre profil! </h1>
+    {% endif %}
+    <h1>Hello {{ app.user.username }}!</h1>
+        <p>Votre Pseudo : {{ app.user.username }}</p>
+        <p>Votre Prénom : {{ app.user.firstName }}</p>
+        <p>Votre Nom : {{ app.user.lastName }}</p>
+        <p>Votre Photo de profil :
+            {% if app.user.image %}
+                <img src="{{ app.user.image }}" alt="Photo de {{ app.user.username }}" >
+            {% else %}
+                <img src="https://i.pravatar.cc/150?img=5" alt="Photo de {{ app.user.username }}" >
+            {% endif %}
+        </p>
+        <p>Votre email : {{ app.user.email }}</p>
+
+</div>
+{% endblock %}

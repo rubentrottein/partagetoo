@@ -1,6 +1,16 @@
 <header class="p-3 ">
     <h1>PartageToo</h1>
+    <i>Site de petites annonces pas piquées des hannetons</i>
     <nav>
-        <a href="{{ path('default_about') }}">Accueil</a>
+        <a href="{{ path('default_home') }}">Accueil</a>
+        <a href="{{ path('default_about') }}">A propos</a>
+
+        {% if app.user %}
+            <a href="{{ path('user_profile') }}">Profil</a>
+            <a href="{{ path('app_logout') }}">Déconnexion</a>
+        {% else %}
+            <a href="{{ path('user_register') }}">Inscription</a>
+            <a href="{{ path('user_login') }}">Connexion</a>
+        {% endif %}
     </nav>
 </header>

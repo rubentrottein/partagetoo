@@ -5,6 +5,7 @@ namespace App\Controller;
 //use App\Entity\Offer;
 
 use App\Repository\OfferRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -28,4 +29,16 @@ class DefaultController extends AbstractController
         // Simple page de description
         return $this->render("default/about.html.twig");
     }
+    #[Route('/profile', name: 'user_profile', methods: ['GET'])]
+    public function profile(UserRepository $userRepository) : Response
+    {
+        // On récupère les utilisateurs
+        $users = $userRepository->findBy(
+            [],
+            ['username'=>'ASC']
+        );
+        // Affichage des informations du profil
+        return $this->render("user/profile.html.twig", ['users' => $users]);
+    }
+
 }

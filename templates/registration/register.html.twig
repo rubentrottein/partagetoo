@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <div class="mx-auto my-1 w-75 bg-dark-subtle p-5 rounded text-black">
+        <h1 class="text-center display-5">Register</h1>
+
+
+        {{ form_errors(registrationForm) }}
+
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.username,  {label: 'Pseudo'       , 'attr': {'class' : 'form-control'} })  }}
+            {{ form_row(registrationForm.email,     {label: 'Adresse Email', 'attr': {'class' : 'form-control'} })  }}
+            {{ form_row(registrationForm.firstName, {label: 'Prénom'       , 'attr': {'class' : 'form-control'} })  }}
+            {{ form_row(registrationForm.lastName,  {label: 'Nom'          , 'attr': {'class' : 'form-control'} })  }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Mot de passe',
+                'attr': {'class' : 'form-control'}
+            }) }}
+            {{ form_row(registrationForm.agreeTerms, {label: 'Accepter les CGU', 'attr': {'class' : 'py-5'} })}}
+            {{ form_row(registrationForm.role, {label: 'Type de compte', value: 'user', disabled: 'true'}) }}
+            <div class="my-3 mx-auto row">
+                <button type="submit" class="btn btn-dark text-warning mx-auto text-center col-5">S'inscrire</button>
+                <a href={{ path('user_login') }}type="button" class="btn btn-dark text-warning mx-auto text-center col-5">Je suis déjà inscrit</a>
+            </div>
+        {{ form_end(registrationForm) }}
+    </form>
+    </div>
+{% endblock %}
